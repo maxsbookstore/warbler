@@ -44,9 +44,9 @@ class Likes(db.Model):
 
     message_id = db.Column(
         db.Integer,
-        db.ForeignKey('messages.id', ondelete='cascade'),
-        unique=True
+        db.ForeignKey('messages.id', ondelete='cascade')
     )
+
 
 
 class User(db.Model):
@@ -208,3 +208,4 @@ def connect_db(app):
 
     db.app = app
     db.init_app(app)
+
